@@ -8,7 +8,6 @@ void menuCaixa(){
     int reset = 1;
     char escolha;
 
-
     while (reset){
         
         system("cls; clear");
