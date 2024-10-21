@@ -2,15 +2,13 @@
 #include<stdlib.h>
 #include<locale.h>
 
+#include "ArquivoTools.h"
 #include "Gerente.h"
 #include "Caixa.h"
 #include "Estoque.h"
 #include "Produtos.h"
 
-
-
 int main(){
-
     int reset = 1;
     char escolha;
     
