@@ -9,17 +9,19 @@
 #include "Produtos.h"
 
 int main(){
+
     int reset = 1;
     char escolha;
     
     setlocale(LC_ALL, "Portuguese");
 
     while (reset){
-        
+        system("cls; clear");
+
+        fflush(stdin);
         printf("Selecione o usuário\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
 
         scanf("%c", &escolha);
-                
         switch (escolha){
         
             case '1':
@@ -40,7 +42,6 @@ int main(){
                 break;
             
             default:
-                system("cls; clear");
                 break;
         }
     }

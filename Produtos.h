@@ -27,14 +27,14 @@ struct produto produtos[10] = {
 
 
 struct produto selecionaProduto(){
+    fflush(stdin);
 
     char escolha;
     int reset = 1; 
 
     while(reset){
         
-        /*system("cls");
-        system("clear");*/
+        system("cls; clear");
 
         printf("Selecione um produto:\n");
 
@@ -42,14 +42,15 @@ struct produto selecionaProduto(){
             printf("%s - %d\n", produtos[i].nome, produtos[i].codigo);
         }
 
-        scanf("%d", &escolha);
+        scanf("%c", &escolha);
 
         char* fim;
         char texto[1] = {escolha};
+        int escolhaInt = strtol(texto, &fim, 10);
         struct produto resultado;
        
         for(int i = 0; i < 10; i++){
-            if(produtos[i].codigo == escolha){
+            if(produtos[i].codigo == escolhaInt){
                 resultado = produtos[i];
                 reset = 0;
                 return resultado;

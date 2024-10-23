@@ -4,7 +4,7 @@
 #include<stdio.h>
 #include<string.h>
 
-float lerEstoque(char pathArquivo[255]){
+float lerEstoque(char pathArquivo[]){
     
     int index = 0;
     FILE *arq;
@@ -13,21 +13,17 @@ float lerEstoque(char pathArquivo[255]){
     char* fim;
 
     arq = fopen(pathArquivo, "r");
-    
-    while(caracter != EOF){
-        caracter = fgetc(arq);
-        texto[index] = caracter;
-        index++;
-    }
+
+    fgets(texto, sizeof(texto), arq);
 
     fclose(arq);
 
-    float resultado = strtod(texto, &fim);
+    float resultado = resultado = strtof(texto, &fim);
 
     return resultado;
 }
 
-void gravarEstoque(char pathArquivo[255], float valor){
+void gravarEstoque(char pathArquivo[], float valor){
     
     FILE *arq;
     char texto[50];

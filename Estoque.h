@@ -7,32 +7,32 @@
 #include "ArquivoTools.h"
 
 void consultarEstoque(){
-    char fim;
     struct produto estoque = selecionaProduto();
     float quantia = lerEstoque(estoque.arquivo);
     system("cls; clear");
-    printf("O estoque de %s\n%f KG`s\n%s\nAperte qualquer tecla para continuar...", estoque.nome, quantia, estoque.arquivo);
-
-    scanf("%c", &fim);
+    printf("O estoque de %s\n%.2f KG`s\nAperte qualquer tecla para continuar...\n", estoque.nome, quantia);
+    getchar();
+    getchar();
     return;
 }
 
 void menuEstoque(){
     int reset = 1;
-    char escolha;
+
+    fflush(stdin);
+    char escolhaEstq;
 
 
     while (reset){
-        
-        //system("cls; clear");
+        char fim;
+
+        system("cls; clear");
         
         printf("Menu do estoque\nQual função deseja usar?\n1 - Cosultar estoque\n0 - Sair\n");
 
-        scanf("%c", &escolha);
-
-        printf("%c", escolha);
-                
-        switch (escolha){
+        scanf("%c", &escolhaEstq);
+        
+        switch (escolhaEstq){
         
             case '0':
                 reset = 0;
@@ -40,12 +40,11 @@ void menuEstoque(){
                 break;
             
             case '1':
-                consultarEstoque();
+                consultarEstoque();    
                 break;
 
             default:
                 system("cls; clear");
-                printf("Selcione uma opção válida!\n");
                 break;
         }
     } 
