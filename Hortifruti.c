@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<locale.h>
 
-#include "ArquivoTools.h"
+#include "Utilidade.h"
 #include "Gerente.h"
 #include "Caixa.h"
 #include "Estoque.h"
@@ -22,6 +22,8 @@ int main(){
         printf("Selecione o usuário\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
 
         scanf("%c", &escolha);
+        system("cls; clear");
+
         switch (escolha){
         
             case '1':
