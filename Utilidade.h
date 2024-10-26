@@ -1,5 +1,5 @@
-#ifndef ARQUIVOTOOLS_H
-#define ARQUIVOTOOLS_H
+#ifndef UTILIDADE_H
+#define UTILIDADE_H
 
 #include<stdio.h>
 #include<string.h>
@@ -34,6 +34,18 @@ void gravarEstoque(char pathArquivo[], float valor){
     fputs(texto, arq);
     fclose(arq);
 
+}
+
+int confirmar(){
+    int decisao;
+
+    system("cls; clear");
+    printf("Confirmar operação?\n1 - Sim\n0 - Não\n");
+
+    scanf("%d", &decisao);
+    system("cls; clear");
+
+    return decisao;
 }
 
 #endif

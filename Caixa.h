@@ -17,7 +17,7 @@ void menuCaixa(){
 
         scanf("%c", &escolha);
 
-        printf("%c", escolha);
+        system("cls; clear");
                 
         switch (escolha){
         

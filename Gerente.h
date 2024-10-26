@@ -8,7 +8,7 @@
 void verificaCofre(){
     system("cls; clear");
     float valor = lerEstoque("cofre.txt");
-    printf("Valor atual do cofre:\nR$ %.2f\nAperte qualquer tecla para continuar...\n", valor);
+    printf("Valor atual do cofre:\nR$ %.2f\nAperte enter para continuar...\n", valor);
     getchar();
     getchar();
     return;
@@ -23,7 +23,7 @@ void comprarEstoque(){
     float estoqueAtual = lerEstoque(aComprar.arquivo);
     
     system("cls; clear");
-    printf("Compra de quantos KGs?");
+    printf("Compra de quantos KGs? separe decimais por vírgula\nEx: 1,99\n");
 
     scanf("%f", &quantia);
     
@@ -32,16 +32,18 @@ void comprarEstoque(){
     valorCompra = quantia * aComprar.precoCompra;
 
     if(valorCompra > valorCofre){
-        printf("A compra custa %.2f e o cofre tem %.2f\nCompra negada!\nAperte qualquer tecla para continuar...", valorCompra, valorCofre);
+        printf("A compra custa %.2f e o cofre tem %.2f\nCompra negada!\nAperte enter para continuar...", valorCompra, valorCofre);
         getchar();
         getchar();
     }
     else{
-        gravarEstoque("cofre.txt", valorCofre - valorCompra);
-        gravarEstoque(aComprar.arquivo, estoqueAtual + quantia);
-        printf("A compra custa %.2f e o cofre tem %.2f\nCompra aceita!\nNovo saldo cofre: R$ %.2f, Estoque de %s: de %.2f KGs para %.2f KGs\nAperte qualquer tecla para continuar...", valorCompra, valorCofre, valorCofre - valorCompra, aComprar.nome, estoqueAtual, estoqueAtual + quantia);
-        getchar();
-        getchar();
+        if(confirmar()){
+            gravarEstoque("cofre.txt", valorCofre - valorCompra);
+            gravarEstoque(aComprar.arquivo, estoqueAtual + quantia);
+            printf("A compra custa %.2f e o cofre tem %.2f\nCompra aceita!\nNovo saldo cofre: R$ %.2f, Estoque de %s: de %.2f KGs para %.2f KGs\nAperte enter para continuar...", valorCompra, valorCofre, valorCofre - valorCompra, aComprar.nome, estoqueAtual, estoqueAtual + quantia);
+            getchar();
+            getchar();
+        }
     }
 }
 
@@ -52,7 +54,7 @@ void geraRelatorioGerente(){
     for(int i = 0; i < 10; i++){
         printf("Estoque %s : %.2f KGs. Preço de compra: %.2f. Preço de venda: %.2f\n", produtos[i].nome, lerEstoque(produtos[i].arquivo), produtos[i].precoCompra, produtos[i].precoVenda);
     }
-    printf("\nAperte qualquer tecla para continuar...\n");
+    printf("\nAperte enter para continuar...\n");
     getchar();
     getchar();
 }
@@ -70,7 +72,7 @@ void menuGerente(){
 
         scanf("%c", &escolha);
 
-        printf("%c", escolha);
+        system("cls; clear");
                 
         switch (escolha){
         
