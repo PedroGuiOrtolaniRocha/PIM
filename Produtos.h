@@ -39,7 +39,8 @@ struct produto selecionaProduto(){
 
         printf("Selecione um produto:\n");
 
-        for(int i = 0; i < 10; i++){
+        int i;
+        for(i = 0; i < 10; i++){
             printf("%s - %d\n", produtos[i].nome, produtos[i].codigo);
         }
 
@@ -48,8 +49,9 @@ struct produto selecionaProduto(){
         char* fim;
         int escolhaInt = strtol(escolha, &fim, 10);
         struct produto resultado;
-       
-        for(int i = 0; i < 10; i++){
+
+        int i;
+        for(i = 0; i < 10; i++){
             if(produtos[i].codigo == escolhaInt){
                 resultado = produtos[i];
                 reset = 0;

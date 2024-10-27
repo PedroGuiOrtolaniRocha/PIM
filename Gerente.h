@@ -51,7 +51,9 @@ void geraRelatorioGerente(){
 
     system("cls; clear");
     printf("Relatório do estoque:\n");
-    for(int i = 0; i < 10; i++){
+
+    int i;
+    for(i = 0; i < 10; i++){
         printf("Estoque %s : %.2f KGs. Preço de compra: %.2f. Preço de venda: %.2f\n", produtos[i].nome, lerEstoque(produtos[i].arquivo), produtos[i].precoCompra, produtos[i].precoVenda);
     }
     printf("\nAperte enter para continuar...\n");
