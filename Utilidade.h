@@ -15,10 +15,9 @@ float lerEstoque(char pathArquivo[]){
     arq = fopen(pathArquivo, "r");
 
     fgets(texto, sizeof(texto), arq);
-
     fclose(arq);
 
-    float resultado = resultado = strtof(texto, &fim);
+    float resultado = strtof(texto, &fim);
 
     return resultado;
 }
