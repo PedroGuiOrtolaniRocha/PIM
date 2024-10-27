@@ -1,20 +1,25 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<locale.h>
+#include<string.h>
 
 #include "Gerente.h"
 #include "Caixa.h"
 #include "Estoque.h"
 #include "Produtos.h"
+#include "Login.h"
 
 
 
 int main(){
-
     int reset = 1;
     char escolha;
     
     setlocale(LC_ALL, "Portuguese");
+
+    struct Usuario* usuarioLogado = login();
+
+    printf("Bom dia %s", usuarioLogado->username);
 
     while (reset){
         
