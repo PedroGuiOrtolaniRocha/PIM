@@ -2,15 +2,16 @@
 #include<stdlib.h>
 #include<locale.h>
 #include<string.h>
-
-#include "Utilidade.h"
+#include "Produtos.h"
+#include "Login.h"
 #include "Gerente.h"
 #include "Caixa.h"
 #include "Estoque.h"
-#include "Produtos.h"
-#include "Login.h"
+
+
 
 int main(){
+
     int reset = 1;
     char escolha;
     
@@ -22,13 +23,13 @@ int main(){
 
     while (reset){
         system("cls; clear");
-
+        
         fflush(stdin);
         printf("Selecione o usuário\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
 
         scanf("%c", &escolha);
         system("cls; clear");
-
+                
         switch (escolha){
         
             case '1':

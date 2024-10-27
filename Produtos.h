@@ -32,6 +32,7 @@ struct produto selecionaProduto(){
 
     char escolha[2];
     int reset = 1; 
+    int i;
 
     while(reset){
         
@@ -50,7 +51,7 @@ struct produto selecionaProduto(){
         int escolhaInt = strtol(escolha, &fim, 10);
         struct produto resultado;
 
-        int i;
+        
         for(i = 0; i < 10; i++){
             if(produtos[i].codigo == escolhaInt){
                 resultado = produtos[i];

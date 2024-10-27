@@ -9,21 +9,22 @@
 
 struct Usuario* login()
 {
+    char username[50];
+    char password[50];
+
     struct Usuario* usuarios = getUsuarios();
-    static struct Usuario usuarioLogado;
+    struct Usuario usuarioLogado;
 
     int encontrado = 0; // Flag para indicar se o login foi bem-sucedido
 
-    char* username = "pedro";
-    char* password = "pedro123";
+ 
+    printf("Digite o seu nome de Usuario: ");
+    fflush(stdin);
+    scanf("%s", username);
 
-    // printf("Digite o seu nome de Usuario: ");
-    // fflush(stdin);
-    // scanf("%c", &username);
-
-    // printf("Digite a sua Senha de Login: ");
-    // fflush(stdin);
-    // scanf("%c", &password);
+    printf("Digite a sua Senha de Login: ");
+    fflush(stdin);
+    scanf("%s", password);
 
     int i; // Declare a variável antes do loop
     for (i = 0; i < sizeof(usuarios); i++)
