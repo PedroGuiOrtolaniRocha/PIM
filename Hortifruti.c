@@ -3,13 +3,12 @@
 #include<locale.h>
 #include<string.h>
 
+#include "Utilidade.h"
 #include "Gerente.h"
 #include "Caixa.h"
 #include "Estoque.h"
 #include "Produtos.h"
 #include "Login.h"
-
-
 
 int main(){
     int reset = 1;
@@ -22,11 +21,14 @@ int main(){
     printf("Bom dia %s", usuarioLogado->username);
 
     while (reset){
-        
+        system("cls; clear");
+
+        fflush(stdin);
         printf("Selecione o usuário\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
 
         scanf("%c", &escolha);
-                
+        system("cls; clear");
+
         switch (escolha){
         
             case '1':
@@ -47,7 +49,6 @@ int main(){
                 break;
             
             default:
-                system("cls; clear");
                 break;
         }
     }
