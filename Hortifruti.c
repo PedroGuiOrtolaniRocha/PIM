@@ -1,12 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<locale.h>
-
-#include "Utilidade.h"
+#include<string.h>
+#include "Produtos.h"
+#include "Login.h"
 #include "Gerente.h"
 #include "Caixa.h"
 #include "Estoque.h"
-#include "Produtos.h"
+
+
 
 int main(){
 
@@ -15,15 +17,19 @@ int main(){
     
     setlocale(LC_ALL, "Portuguese");
 
+    struct Usuario* usuarioLogado = login();
+
+    printf("Bom dia %s", usuarioLogado->username);
+
     while (reset){
         system("cls; clear");
-
+        
         fflush(stdin);
         printf("Selecione o usuário\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
 
         scanf("%c", &escolha);
         system("cls; clear");
-
+                
         switch (escolha){
         
             case '1':

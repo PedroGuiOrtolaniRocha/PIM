@@ -21,7 +21,7 @@ struct produto produtos[10] = {
     {"Cebola", 2.21, 3.09, "cebola.txt", 4},
     {"Alho", 24.02, 33.63, "alho.txt", 5},
     {"Limão", 6.60, 9.24, "limao.txt", 6},
-    {"Alface", 23.19, 32.47, "alface.txt", 7},
+    {"Laranja", 23.19, 32.47, "laranja.txt", 7},
     {"Tomate", 3.95, 5.53, "tomate.txt", 8},
     {"Maracujá", 7.16, 10.02, "maracuja.txt", 9},
     {"Morango", 19.86, 27.80, "morango.txt", 10}
@@ -32,6 +32,7 @@ struct produto selecionaProduto(){
 
     char escolha[2];
     int reset = 1; 
+    int i;
 
     while(reset){
         
@@ -50,7 +51,7 @@ struct produto selecionaProduto(){
         int escolhaInt = strtol(escolha, &fim, 10);
         struct produto resultado;
 
-        int i;
+        
         for(i = 0; i < 10; i++){
             if(produtos[i].codigo == escolhaInt){
                 resultado = produtos[i];

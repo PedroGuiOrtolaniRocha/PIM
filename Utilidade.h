@@ -3,6 +3,7 @@
 
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 
 float lerEstoque(char pathArquivo[]){
     
@@ -14,7 +15,7 @@ float lerEstoque(char pathArquivo[]){
 
     arq = fopen(pathArquivo, "r");
 
-    fgets(texto, sizeof(texto), arq);
+    fgets(texto, 255, arq);
 
     fclose(arq);
 

@@ -4,6 +4,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "Produtos.h"
+#include "Utilidade.h"
 
 void verificaCofre(){
     system("cls; clear");
