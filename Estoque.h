@@ -74,8 +74,13 @@ void menuEstoque(){
         char fim;
 
         system("cls; clear");
+        printf("+-------------------------------+\n");
+        printf("|   Bem-vindo ao Hortifruti!    |\n");
+        printf("|       Menu do Estoque         |\n");
+        printf("+------------------------------ +\n");
+        printf("\n");
         
-        printf("Menu do estoque\nQual função deseja usar?\n1 - Cosultar estoque\n2 - Atualizar estoque\n3 - Gerar relatório do estoque\n0 - Sair\n");
+        printf("Qual função deseja usar?\n1 - Cosultar estoque\n2 - Atualizar estoque\n3 - Gerar relatório do estoque\n0 - Sair\n");
 
         scanf("%c", &escolhaEstq);
     

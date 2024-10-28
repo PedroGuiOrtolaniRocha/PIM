@@ -70,9 +70,13 @@ void menuGerente(){
     while (reset){
         
         system("cls; clear");
-        
-        printf("Menu do gerente\nQual função deseja usar?\n1 - Verificar cofre\n2 - Relatório estoque\n3 - Comprar estoque\n0 - Sair\n");
 
+        printf("+-------------------------------+\n");
+        printf("|   Bem-vindo ao Hortifruti!    |\n");
+        printf("|       Menu do gerente         |\n");
+        printf("+------------------------------ +\n");
+        printf("\n");
+        printf("Qual função deseja usar?\n1 - Verificar cofre\n2 - Relatório estoque\n3 - Comprar estoque\n0 - Sair\n");
         scanf("%c", &escolha);
 
         system("cls; clear");

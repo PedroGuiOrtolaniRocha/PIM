@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 struct Usuario
 {
@@ -29,7 +30,12 @@ struct Usuario login()
 
     while(reset){
         system("cls; clear");
-        printf("Selecione o usuário\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
+        printf("+-------------------------------+\n");
+        printf("|   Bem-vindo ao Hortifruti!    |\n");
+        printf("|                               |\n");
+        printf("+------------------------------ +\n");
+        printf("\n");
+        printf("Selecione o usuário:\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
 
         fflush(stdin);
         scanf("%s", &id);
