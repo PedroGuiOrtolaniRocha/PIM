@@ -3,55 +3,48 @@
 #include<locale.h>
 #include<string.h>
 #include "Produtos.h"
-#include "Login.h"
 #include "Gerente.h"
 #include "Caixa.h"
 #include "Estoque.h"
+#include "Usuarios.h"
 
 
 
 int main(){
 
     int reset = 1;
-    char escolha;
-    
+    int escolha; 
+
     setlocale(LC_ALL, "Portuguese");
 
-    struct Usuario* usuarioLogado = login();
+    while(reset){
 
-    printf("Bom dia %s", usuarioLogado->username);
-
-    while (reset){
-        system("cls; clear");
-        
         fflush(stdin);
-        printf("Selecione o usuário\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
 
-        scanf("%c", &escolha);
-        system("cls; clear");
-                
-        switch (escolha){
+        struct Usuario usuarioLogado = login();
+        escolha = usuarioLogado.id;
+
+        switch(escolha){
+        case 1:
+            menuGerente();
+            break;
+
+        case 2:
+            menuEstoque();
+            break;
+
+        case 3:
+            menuCaixa();
+            break;
         
-            case '1':
-                menuGerente();
-                break;
-            
-            case '2':
-                menuEstoque();
-                break;
-            
-            case '3':
-                menuCaixa();
-                break;
-            
-            case '0':
-                reset = 0;
-                system("cls; clear");
-                break;
-            
-            default:
-                break;
+        case 0:
+            reset = 0;
+            break;
+
+        default:
+            break;
         }
+
     }
 
     return 0;
