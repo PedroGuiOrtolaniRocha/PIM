@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "produtos.h" 
+#include "Produtos.h" 
 
 void exibirRecibo(struct produto produtos[], float pesos[], int count) {
     printf("\nRecibo:\n");
