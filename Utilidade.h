@@ -27,7 +27,7 @@ float lerEstoque(char pathArquivo[]){
 void gravarEstoque(char pathArquivo[], float valor){
     
     FILE *arq;
-    char texto[50];
+    char texto[255];
 
     sprintf(texto, "%f", valor); 
     arq = fopen(pathArquivo, "w");
@@ -49,4 +49,9 @@ int confirmar(){
     return decisao;
 }
 
+void enterParaContinuar(){
+    printf("\nAperte enter para continuar...\n");
+    getchar();
+    getchar();
+}
 #endif

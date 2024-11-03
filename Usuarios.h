@@ -47,7 +47,7 @@ struct Usuario login()
 
         fflush(stdin);
 
-        printf("Digite a sua Senha de Login: ");
+        printf("Digite a sua Senha de Login:\n");
         scanf("%s", password);
 
         fflush(stdin);
@@ -58,15 +58,15 @@ struct Usuario login()
         {
             if(strtol(id, &fim, 10) == usuarios[i].id && strcmp(password, usuarios[i].password) == 0) {
     
-                printf("Login bem sucedido! %s", usuarios[i].password);
+                printf("Login bem sucedido!");
+                enterParaContinuar();
+                system("cls; clear;");
                 return usuarios[i];
-                reset = 0;
-                break;
             }
     }
 
-    printf("usuário e/ou senha inválidos\n");
-    
+    printf("usuário e/ou senha inválidos!");
+    enterParaContinuar();
     }
 
 }

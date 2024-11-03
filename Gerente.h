@@ -9,9 +9,8 @@
 void verificaCofre(){
     system("cls; clear");
     float valor = lerEstoque("cofre.txt");
-    printf("Valor atual do cofre:\nR$ %.2f\nAperte enter para continuar...\n", valor);
-    getchar();
-    getchar();
+    printf("Valor atual do cofre:\nR$ %.2f\n", valor);
+    enterParaContinuar();
     return;
 }
 
@@ -33,17 +32,15 @@ void comprarEstoque(){
     valorCompra = quantia * aComprar.precoCompra;
 
     if(valorCompra > valorCofre){
-        printf("A compra custa %.2f e o cofre tem %.2f\nCompra negada!\nAperte enter para continuar...", valorCompra, valorCofre);
-        getchar();
-        getchar();
+        printf("A compra custa %.2f e o cofre tem %.2f\nCompra negada!", valorCompra, valorCofre);
+        enterParaContinuar();
     }
     else{
         if(confirmar()){
             gravarEstoque("cofre.txt", valorCofre - valorCompra);
             gravarEstoque(aComprar.arquivo, estoqueAtual + quantia);
-            printf("A compra custa %.2f e o cofre tem %.2f\nCompra aceita!\nNovo saldo cofre: R$ %.2f, Estoque de %s: de %.2f KGs para %.2f KGs\nAperte enter para continuar...", valorCompra, valorCofre, valorCofre - valorCompra, aComprar.nome, estoqueAtual, estoqueAtual + quantia);
-            getchar();
-            getchar();
+            printf("A compra custa %.2f e o cofre tem %.2f\nCompra aceita!\nNovo saldo cofre: R$ %.2f, Estoque de %s: de %.2f KGs para %.2f KGs", valorCompra, valorCofre, valorCofre - valorCompra, aComprar.nome, estoqueAtual, estoqueAtual + quantia);
+            enterParaContinuar();
         }
     }
 }
@@ -57,9 +54,7 @@ void geraRelatorioGerente(){
     for(i = 0; i < 10; i++){
         printf("Estoque %s : %.2f KGs. Preço de compra: %.2f. Preço de venda: %.2f\n", produtos[i].nome, lerEstoque(produtos[i].arquivo), produtos[i].precoCompra, produtos[i].precoVenda);
     }
-    printf("\nAperte enter para continuar...\n");
-    getchar();
-    getchar();
+    enterParaContinuar();
 }
 
 void menuGerente(){
