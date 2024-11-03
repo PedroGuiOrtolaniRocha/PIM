@@ -11,9 +11,8 @@ void consultarEstoque(){
     struct produto estoque = selecionaProduto();
     system("cls; clear");
     float quantia = lerEstoque(estoque.arquivo);
-    printf("O estoque de %s\n%.2f KG`s\nAperte enter para continuar...\n", estoque.nome, quantia);
-    getchar();
-    getchar();
+    printf("O estoque de %s\n%.2f KG`s", estoque.nome, quantia);
+    enterParaContinuar();
     return;
 }
 
@@ -30,19 +29,23 @@ void atualizarEstoque(){
     system("cls; clear");
 
     if (valor < 0){
-        printf("O estoque de nunca pode ficar abaixo de 0!\nAperte enter para continuar...\n");
-    }
-    
-    else{
-        if(confirmar()){
-            printf("O estoque de %s atualizado para %.2f KG`s\nAperte enter para continuar...\n", estoque.nome, valor);
-            gravarEstoque(estoque.arquivo, valor);
-            getchar();
-            getchar();
-        }
-        
+        printf("O estoque de nunca pode ficar abaixo de 0!\n");
+        enterParaContinuar();
+        return;
     }
 
+    if(valor > quantia){
+        printf("Você não pode adicionar produtos!\n");
+        enterParaContinuar();
+        return;
+    }
+    
+    if(confirmar()){
+        printf("O estoque de %s atualizado para %.2f KG`s", estoque.nome, valor);
+        gravarEstoque(estoque.arquivo, valor);
+        enterParaContinuar();
+    }
+    
 
     return;
 }
@@ -57,9 +60,7 @@ void geraRelatorio(){
         printf("%s - %.2f KGs\n", produtos[i].nome, lerEstoque(produtos[i].arquivo));
     }
 
-    printf("\nAperte enter para continuar...\n");
-    getchar();
-    getchar();
+    enterParaContinuar();
 }
 
 
