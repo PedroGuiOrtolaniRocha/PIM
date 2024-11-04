@@ -6,6 +6,7 @@
 #include "Produtos.h"
 #include "Utilidade.h" 
 
+
 void calculaTroco(){
     float preco; 
     float valor;
@@ -36,7 +37,7 @@ void exibirRecibo(struct produto produtos[], float pesos[], int count) {
     float cofre = lerEstoque("cofre.txt");
 
     if(!confirmar()){
-        printf("Compra cancrelada!\n");
+        printf("Compra cancelada!\n");
         enterParaContinuar();
         return;
     }
@@ -131,7 +132,7 @@ void menuCaixa() {
     while (reset) {
         system("cls; clear");
         printf("+-------------------------------+\n");
-        printf("|   Bem-vindo ao Hortifruti!    |\n");
+        printf("|     Hortifruti FrutoMel!      |\n");
         printf("|         Menu do Caixa         |\n");
         printf("+------------------------------ +\n");
         printf("\n");

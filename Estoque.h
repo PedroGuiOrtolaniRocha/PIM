@@ -76,7 +76,7 @@ void menuEstoque(){
 
         system("cls; clear");
         printf("+-------------------------------+\n");
-        printf("|   Bem-vindo ao Hortifruti!    |\n");
+        printf("|     Hortifruti FrutoMel!      |\n");
         printf("|       Menu do Estoque         |\n");
         printf("+------------------------------ +\n");
         printf("\n");
