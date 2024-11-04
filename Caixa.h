@@ -131,7 +131,7 @@ void menuCaixa() {
     while (reset) {
         system("cls; clear");
         printf("+-------------------------------+\n");
-        printf("|   Bem-vindo ao Hortifruti!    |\n");
+        printf("|      Hortifruti FrutoMel!     |\n");
         printf("|         Menu do Caixa         |\n");
         printf("+------------------------------ +\n");
         printf("\n");

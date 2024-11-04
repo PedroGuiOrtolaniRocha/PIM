@@ -31,7 +31,7 @@ struct Usuario login()
     while(reset){
         system("cls; clear");
         printf("+-------------------------------+\n");
-        printf("|   Bem-vindo ao Hortifruti!    |\n");
+        printf("|      Hortifruti FrutoMel!     |\n");
         printf("|                               |\n");
         printf("+------------------------------ +\n");
         printf("\n");
