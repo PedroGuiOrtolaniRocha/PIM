@@ -35,7 +35,7 @@ struct Usuario login()
         printf("|                               |\n");
         printf("+------------------------------ +\n");
         printf("\n");
-        printf("Selecione o usuário:\n1 - Gerente\n2 - Estoque\n3 - Caixa\n0 - Sair\n");
+        printf("Selecione o usuário:\n1 - Gerente\n2 - Estoque\n3 - Caixa\n");
 
         fflush(stdin);
         scanf("%s", &id);

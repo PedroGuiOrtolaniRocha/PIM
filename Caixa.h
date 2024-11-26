@@ -10,13 +10,19 @@ void calculaTroco(){
     float preco; 
     float valor;
 
-    printf("Digite o valor da compra, separe os centavos por virgula\nEx: 1,99");
-    scanf("%f", &preco);
+    system("cls; clear;");
 
-    printf("Digite o valor do pagamento, separe os centavos por virgula\nEx: 1,99");
+    printf("Digite o valor da compra, separe os centavos por virgula\nEx: 1,99\n");
+    scanf("%f", &preco);
+    
+    system("cls; clear;");
+
+    printf("Digite o valor do pagamento, separe os centavos por virgula\nEx: 1,99\n");
     scanf("%f", &valor);
 
-    printf("O valor do troco é: %.2f\n", valor - preco);
+    system("cls; clear;");
+
+    printf("O valor do troco é: %.2f\n", preco - valor);
     enterParaContinuar();
 }
 
@@ -75,7 +81,7 @@ void atualizaCarrinho(struct produto carrinho[], float pesos[], int *count){
         enterParaContinuar();
         return;
     }
-
+    system("cls; clear;");
     printf("Informe o peso (KGs) do produto %s, use virgula para separar decimais:\nEx: 1,99\n", p.nome);
     scanf("%f", &peso);
     
@@ -152,7 +158,11 @@ void menuCaixa() {
             case '2': 
                 estoqueEPrecos();
                 break;
-            
+
+            case '3':
+                calculaTroco();
+                break;
+
             case '0':
                 reset = 0;
                 system("cls; clear");

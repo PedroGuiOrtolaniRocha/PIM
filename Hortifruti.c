@@ -28,7 +28,7 @@ int main(){
         case 1:
             menuGerente();
             break;
-
+            
         case 2:
             menuEstoque();
             break;
